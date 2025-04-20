@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "HwVC+W/leVo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user1\\Documents\\תכנות תשפה\\פרקטיקום\\HireHub\\HireHub.Core\\HireHub.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user1\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
+    "C:\\Users\\user1\\.nuget\\packages\\awssdk.core\\3.7.402.31\\awssdk.core.3.7.402.31.nupkg.sha512",
+    "C:\\Users\\user1\\.nuget\\packages\\awssdk.s3\\3.7.416.1\\awssdk.s3.3.7.416.1.nupkg.sha512",
+    "C:\\Users\\user1\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\user1\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\user1\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\user1\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.202\\microsoft.net.sdk.compilers.toolset.9.0.202.nupkg.sha512"
+  ],
+  "logs": []
+}
