@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CtlXSFOYS04=",
+  "dgSpecHash": "2dJ6G/dNgXo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user1\\Documents\\תכנות תשפה\\פרקטיקום\\HireHub\\HireHub.Service\\HireHub.Service.csproj",
+  "projectFilePath": "C:\\Users\\user1\\Documents\\תכנות תשפה\\פרקטיקום\\HireHub\\HireHub-Service\\HireHub.Service\\HireHub.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user1\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\user1\\.nuget\\packages\\awssdk.core\\3.7.402.31\\awssdk.core.3.7.402.31.nupkg.sha512",

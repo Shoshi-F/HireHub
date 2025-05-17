@@ -8,14 +8,14 @@ using HireHub.Core.IServices;
 
 namespace HireHub.API.Controllers
 {
-    [Route("api/cv")]
+    [Route("api/resumes")]
     [ApiController]
-    public class CVController : ControllerBase
+    public class ResumesController : ControllerBase
     {
         private readonly IResumesService _resumesService;
         private readonly IS3Service _s3Service;
         private readonly IMapper _mapper;
-        public CVController(
+        public ResumesController(
             IResumesService resumesService,
             IMapper mapper,
             IS3Service s3Service)
@@ -58,8 +58,8 @@ namespace HireHub.API.Controllers
         public async Task<IActionResult> ConfirmUpload([FromBody] ResumesPostModel resume)
         {
             var userId = (int)HttpContext.Items["UserId"];
-            var cvResult = _resumesService.ConfirmGeneralResumesUpload(userId, resume.ContentType);
-            return Ok(cvResult);
+            var resumesResult = _resumesService.ConfirmGeneralResumesUpload(userId, resume.ContentType);
+            return Ok(resumesResult);
         }
 
      
@@ -80,7 +80,7 @@ namespace HireHub.API.Controllers
             return Ok("File uploaded successfully.");
         }
 
-        // DELETE api/<CVController>/5
+        // DELETE api/<ResumesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

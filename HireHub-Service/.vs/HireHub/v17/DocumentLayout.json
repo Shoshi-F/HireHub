@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user1\\Documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\HireHub\\HireHub-Service\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{70E6323E-B03E-4E1D-940A-AAD7628F228C}|HireHub.Service\\HireHub.Service.csproj|c:\\users\\user1\\documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\hirehub\\hirehub-service\\hirehub.service\\backgroundservices\\jobsclaenupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70E6323E-B03E-4E1D-940A-AAD7628F228C}|HireHub.Service\\HireHub.Service.csproj|solutionrelative:hirehub.service\\backgroundservices\\jobsclaenupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3C9FD8E-2C69-4D6F-97E7-A89F8CA319F3}|HireHub.Api\\HireHub.Api.csproj|c:\\users\\user1\\documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\hirehub\\hirehub-service\\hirehub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F3C9FD8E-2C69-4D6F-97E7-A89F8CA319F3}|HireHub.Api\\HireHub.Api.csproj|solutionrelative:hirehub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3C9FD8E-2C69-4D6F-97E7-A89F8CA319F3}|HireHub.Api\\HireHub.Api.csproj|c:\\users\\user1\\documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\hirehub\\hirehub-service\\hirehub.api\\controllers\\resumescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3C9FD8E-2C69-4D6F-97E7-A89F8CA319F3}|HireHub.Api\\HireHub.Api.csproj|solutionrelative:hirehub.api\\controllers\\resumescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\HireHub\\HireHub-Service\\HireHub.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "HireHub.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\user1\\Documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\HireHub\\HireHub-Service\\HireHub.Api\\appsettings.json",
+              "RelativeToolTip": "HireHub.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-29T22:45:28.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JobsClaenUpService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\HireHub\\HireHub-Service\\HireHub.Service\\BackgroundServices\\JobsClaenUpService.cs",
+              "RelativeDocumentMoniker": "HireHub.Service\\BackgroundServices\\JobsClaenUpService.cs",
+              "ToolTip": "C:\\Users\\user1\\Documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\HireHub\\HireHub-Service\\HireHub.Service\\BackgroundServices\\JobsClaenUpService.cs",
+              "RelativeToolTip": "HireHub.Service\\BackgroundServices\\JobsClaenUpService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T22:28:00.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ResumesController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\HireHub\\HireHub-Service\\HireHub.Api\\Controllers\\ResumesController.cs",
+              "RelativeDocumentMoniker": "HireHub.Api\\Controllers\\ResumesController.cs",
+              "ToolTip": "C:\\Users\\user1\\Documents\\\u05EA\u05DB\u05E0\u05D5\u05EA \u05EA\u05E9\u05E4\u05D4\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\HireHub\\HireHub-Service\\HireHub.Api\\Controllers\\ResumesController.cs",
+              "RelativeToolTip": "HireHub.Api\\Controllers\\ResumesController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwBgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T00:27:08.332Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

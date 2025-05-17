@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HireHub.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17ce46373f930608cad7279a63bbde33e5c46510")]
 [assembly: System.Reflection.AssemblyProductAttribute("HireHub.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HireHub.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

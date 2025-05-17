@@ -5,6 +5,97 @@
     "version": "v1"
   },
   "paths": {
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/jobs": {
       "get": {
         "tags": [
@@ -18,7 +109,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/JobsDTO"
                   }
                 }
               },
@@ -26,7 +117,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/JobsDTO"
                   }
                 }
               },
@@ -34,7 +125,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/JobsDTO"
                   }
                 }
               }
@@ -50,24 +141,41 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/JobsPostModel"
               }
             },
             "text/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/JobsPostModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/JobsPostModel"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              }
+            }
           }
         }
       }
@@ -94,17 +202,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/JobsDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/JobsDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/JobsDTO"
                 }
               }
             }
@@ -130,24 +238,41 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/JobsPutModel"
               }
             },
             "text/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/JobsPutModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/JobsPutModel"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              }
+            }
           }
         }
       },
@@ -168,7 +293,222 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/jobs/{id}/CreatePresignedUrlForResume": {
+      "post": {
+        "tags": [
+          "Jobs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/jobs/{id}/Apply": {
+      "post": {
+        "tags": [
+          "Jobs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationsDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationsDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationsDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/jobs/{id}/ConfirmResumesUploadAndApply": {
+      "post": {
+        "tags": [
+          "Jobs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResumesDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResumesDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResumesDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/jobs/{id}/change-status": {
+      "put": {
+        "tags": [
+          "Jobs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsDTO"
+                }
+              }
+            }
           }
         }
       }
@@ -186,7 +526,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/Resumes"
                   }
                 }
               },
@@ -194,7 +534,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/Resumes"
                   }
                 }
               },
@@ -202,40 +542,11 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/Resumes"
                   }
                 }
               }
             }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Resumes"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -262,17 +573,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/Resumes"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/Resumes"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/Resumes"
                 }
               }
             }
@@ -298,24 +609,44 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "type": "string",
+                "format": "binary"
               }
             },
             "text/json": {
               "schema": {
-                "type": "string"
+                "type": "string",
+                "format": "binary"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "string"
+                "type": "string",
+                "format": "binary"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -334,6 +665,68 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/resumes/generate-upload-url": {
+      "post": {
+        "tags": [
+          "Resumes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/resumes/confirm-upload": {
+      "post": {
+        "tags": [
+          "Resumes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumesPostModel"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -512,6 +905,551 @@
   },
   "components": {
     "schemas": {
+      "Applications": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidateUser": {
+            "$ref": "#/components/schemas/User"
+          },
+          "jobId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jobCandidate": {
+            "$ref": "#/components/schemas/Jobs"
+          },
+          "resumeId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userResume": {
+            "$ref": "#/components/schemas/Resumes"
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "applicationDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationsDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidateUser": {
+            "$ref": "#/components/schemas/UserDTO"
+          },
+          "jobId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jobCandidate": {
+            "$ref": "#/components/schemas/JobsDTO"
+          },
+          "resumeId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userResume": {
+            "$ref": "#/components/schemas/ResumesDTO"
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "applicationDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Jobs": {
+        "required": [
+          "description",
+          "jobRequirements",
+          "jobTitle"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jobTitle": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "company": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobRequirements": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "jobSkills": {
+            "type": "string",
+            "nullable": true
+          },
+          "yearsOfExperienceRequired": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "area": {
+            "type": "string",
+            "nullable": true
+          },
+          "recruiterId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "recruitingUser": {
+            "$ref": "#/components/schemas/User"
+          },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Applications"
+            },
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "viewsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "salaryRange": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobsDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jobTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobRequirements": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobSkills": {
+            "type": "string",
+            "nullable": true
+          },
+          "yearsOfExperienceRequired": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "area": {
+            "type": "string",
+            "nullable": true
+          },
+          "recruiterId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "recruitingUser": {
+            "$ref": "#/components/schemas/UserDTO"
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "viewsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "salaryRange": {
+            "type": "string",
+            "nullable": true
+          },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationsDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobsPostModel": {
+        "type": "object",
+        "properties": {
+          "jobTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobRequirements": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobSkills": {
+            "type": "string",
+            "nullable": true
+          },
+          "yearsOfExperienceRequired": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "area": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobsPutModel": {
+        "type": "object",
+        "properties": {
+          "jobTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobRequirements": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobSkills": {
+            "type": "string",
+            "nullable": true
+          },
+          "area": {
+            "type": "string",
+            "nullable": true
+          },
+          "yearsOfExperienceRequired": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginModel": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterModel": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Resumes": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidate": {
+            "$ref": "#/components/schemas/User"
+          },
+          "path": {
+            "type": "string",
+            "nullable": true
+          },
+          "uploadedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isGeneral": {
+            "type": "boolean"
+          },
+          "contentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "downloadCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResumesDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "candidate": {
+            "$ref": "#/components/schemas/UserDTO"
+          },
+          "path": {
+            "type": "string",
+            "nullable": true
+          },
+          "uploadedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isGeneral": {
+            "type": "boolean"
+          },
+          "contentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "downloadCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResumesPostModel": {
+        "type": "object",
+        "properties": {
+          "contentType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Role": {
+        "required": [
+          "roleName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleName": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "required": [
+          "email",
+          "firstName",
+          "lastName",
+          "password",
+          "roleId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "lastName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "jobs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Jobs"
+            },
+            "nullable": true
+          },
+          "roleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hasUploadedGeneralResume": {
+            "type": "boolean"
+          },
+          "loginAttempts": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isTwoFactorEnabled": {
+            "type": "boolean"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserDTO": {
         "type": "object",
         "properties": {
@@ -528,6 +1466,10 @@
             "nullable": true
           },
           "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
             "type": "string",
             "nullable": true
           },

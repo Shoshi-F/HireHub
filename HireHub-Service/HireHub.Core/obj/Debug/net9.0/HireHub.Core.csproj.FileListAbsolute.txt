@@ -10,3 +10,16 @@ C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub.Co
 C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub.Core\obj\Debug\net9.0\refint\HireHub.Core.dll
 C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub.Core\obj\Debug\net9.0\HireHub.Core.pdb
 C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub.Core\obj\Debug\net9.0\ref\HireHub.Core.dll
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\bin\Debug\net9.0\HireHub.Core.deps.json
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\bin\Debug\net9.0\HireHub.Core.dll
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\bin\Debug\net9.0\HireHub.Core.pdb
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.csproj.AssemblyReference.cache
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.AssemblyInfoInputs.cache
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.AssemblyInfo.cs
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.sourcelink.json
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.dll
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\refint\HireHub.Core.dll
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\HireHub.Core.pdb
+C:\Users\user1\Documents\תכנות תשפה\פרקטיקום\HireHub\HireHub-Service\HireHub.Core\obj\Debug\net9.0\ref\HireHub.Core.dll

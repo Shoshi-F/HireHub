@@ -1,15 +1,31 @@
 [
   {
-    "ContainingType": "HireHub.Api.Controllers.JobsController",
-    "Method": "Get",
-    "RelativePath": "api/jobs",
+    "ContainingType": "ProFit.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userLogin",
+        "Type": "HireHub.Api.PostModels.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProFit.API.Controllers.AuthController",
+    "Method": "GetUserFromToken",
+    "RelativePath": "api/auth/me",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "HireHub.Core.DTOs.UserDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -20,7 +36,43 @@
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.JobsController",
+    "ContainingType": "ProFit.API.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRegister",
+        "Type": "HireHub.API.PostModels.RegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.JobsController",
+    "Method": "Get",
+    "RelativePath": "api/jobs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HireHub.Core.DTOs.JobsDTO, HireHub.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.JobsController",
     "Method": "Post",
     "RelativePath": "api/jobs",
     "HttpMethod": "POST",
@@ -28,21 +80,25 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "jobPost",
+        "Type": "HireHub.Api.PostModels.JobsPostModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "HireHub.Core.DTOs.JobsDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.JobsController",
+    "ContainingType": "HireHub.API.Controllers.JobsController",
     "Method": "Get",
     "RelativePath": "api/jobs/{id}",
     "HttpMethod": "GET",
@@ -57,7 +113,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "HireHub.Core.DTOs.JobsDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -68,7 +124,7 @@
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.JobsController",
+    "ContainingType": "HireHub.API.Controllers.JobsController",
     "Method": "Put",
     "RelativePath": "api/jobs/{id}",
     "HttpMethod": "PUT",
@@ -81,22 +137,26 @@
         "IsRequired": true
       },
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "jobPut",
+        "Type": "HireHub.Api.PutModels.JobsPutModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "HireHub.Core.DTOs.JobsDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.JobsController",
-    "Method": "Delete",
+    "ContainingType": "HireHub.API.Controllers.JobsController",
+    "Method": "delete",
     "RelativePath": "api/jobs/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -110,23 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "HireHub.Api.Controllers.ResumesController",
-    "Method": "Get",
-    "RelativePath": "api/resumes",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Boolean",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -137,29 +181,173 @@
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.ResumesController",
-    "Method": "Post",
-    "RelativePath": "api/resumes",
+    "ContainingType": "HireHub.API.Controllers.JobsController",
+    "Method": "Apply",
+    "RelativePath": "api/jobs/{id}/Apply",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "HireHub.Core.DTOs.ApplicationsDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.ResumesController",
+    "ContainingType": "HireHub.API.Controllers.JobsController",
+    "Method": "ConfirmResumesUploadAndApply",
+    "RelativePath": "api/jobs/{id}/ConfirmResumesUploadAndApply",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "resume",
+        "Type": "HireHub.Api.PostModels.ResumesPostModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HireHub.Core.DTOs.ResumesDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.JobsController",
+    "Method": "CreatePresignedUrlForResume",
+    "RelativePath": "api/jobs/{id}/CreatePresignedUrlForResume",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "resume",
+        "Type": "HireHub.Api.PostModels.ResumesPostModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.JobsController",
+    "Method": "UpdateStatus",
+    "RelativePath": "api/jobs/{id}/change-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HireHub.Core.DTOs.JobsDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.ResumesController",
+    "Method": "Get",
+    "RelativePath": "api/resumes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HireHub.Core.Entities.Resumes, HireHub.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.ResumesController",
+    "Method": "ConfirmUpload",
+    "RelativePath": "api/resumes/confirm-upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resume",
+        "Type": "HireHub.Api.PostModels.ResumesPostModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.ResumesController",
+    "Method": "GenerateUploadUrl",
+    "RelativePath": "api/resumes/generate-upload-url",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resume",
+        "Type": "HireHub.Api.PostModels.ResumesPostModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HireHub.API.Controllers.ResumesController",
     "Method": "Get",
     "RelativePath": "api/resumes/{id}",
     "HttpMethod": "GET",
@@ -174,7 +362,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "HireHub.Core.Entities.Resumes",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -185,7 +373,7 @@
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.ResumesController",
+    "ContainingType": "HireHub.API.Controllers.ResumesController",
     "Method": "Put",
     "RelativePath": "api/resumes/{id}",
     "HttpMethod": "PUT",
@@ -198,21 +386,25 @@
         "IsRequired": true
       },
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "HireHub.Api.Controllers.ResumesController",
+    "ContainingType": "HireHub.API.Controllers.ResumesController",
     "Method": "Delete",
     "RelativePath": "api/resumes/{id}",
     "HttpMethod": "DELETE",

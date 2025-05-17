@@ -21,8 +21,4 @@
     <ProjectReference Include="..\HireHub.Core\HireHub.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="BackgroundServices\" />
-  </ItemGroup>
-
 </Project>
